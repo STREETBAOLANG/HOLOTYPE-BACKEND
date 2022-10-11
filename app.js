@@ -53,6 +53,8 @@ app.use((req, res, next) => {
 app.use("/feed", feedRoutes);
 app.use("/auth", authRoutes);
 
+console.log(process.env.MONGO_USER)
+
 mongoose
   .connect(
     `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.axi4m.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}`
