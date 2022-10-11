@@ -1,0 +1,7 @@
+{
+  "env": {
+    "MONGO_USER": "yuguang",
+    "MONGO_PASSWORD": "Wl6RxltMNpdroLSl",
+    "MONGO_DEFAULT_DATABASE": "Holytype"
+  }
+}

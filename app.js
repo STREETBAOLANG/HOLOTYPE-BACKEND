@@ -4,6 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const multer = require("multer");
+const compression = require("compression");
 
 const feedRoutes = require("./routes/feed");
 const authRoutes = require("./routes/auth");
@@ -31,6 +32,8 @@ const fileFilter = (req, file, cb) => {
   }
 };
 
+app.use(compression());
+
 app.use(bodyParser.json());
 app.use(
   multer({ storage: fileStorage, fileFilter: fileFilter }).single("image")
@@ -52,9 +55,9 @@ app.use("/auth", authRoutes);
 
 mongoose
   .connect(
-    "mongodb+srv://yuguang:Wl6RxltMNpdroLSl@cluster0.axi4m.mongodb.net/Holytype"
+    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.axi4m.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}`
   )
   .then((result) => {
-    app.listen(8080);
+    app.listen(process.env.PORT || 8080);
   })
   .catch((err) => console.log(err));
