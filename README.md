@@ -2,7 +2,11 @@
 
 This is the backend code for Holotype, an React Native mobile application which allows users to log and post information (pictures, text and geolocation) about suspected new species. Users can also comment on and vote for posts. The highly voted posts will be sent to taxonomists to decide if it is indeed a new species.
 
-The backend is a RESTful API that was developed using NodeJS with Express as the framework. All the data are stored in a MongoDB database, including all the posts and user information.
+<h3>Project architecture</h3>
+<p>
+Holotype is a mobile application that utilizes React Native as its front-end framework and NodeJS as its back-end technology. It stores its data on a MongoDB database, and the back-end is designed as a RESTful API. This API is deployed on Google Cloud Platform's App Engine, which is integrated with Google Storage to serve as the file system. This architecture allows the application to be scalable and capable of handling increasing traffic and data storage requirements.
+</p>
+<div><a href="https://holotype.ts.r.appspot.com">Backend Url</a></div>
 
 <h3>Database Design</h3>
 
@@ -18,18 +22,15 @@ Post data schema is nested in user schema as below.
   <img src="https://user-images.githubusercontent.com/55920971/227761246-6f302ab2-aa3d-4d61-8e8b-5a24a2756969.png"  width="400" height="400">
 </ul>
 
-<h2>How to install and run the project</h2>
+<h3>How to run the App</h3>
+<ol>
+<li>Install NodeJS if it is not installed on the computer.</li>
+<li> Download Expo Go on your mobile device.</li>
+<li> Open the terminal, on the Holotype root directory, type "npm install" to install all the dependencies.</li>
+<li> Type "npm start" to run the code and it will generate a QR code.</li>
+<li> Use your mobile device to scan the QR code to run the simulator on your phone.</li>
+</ol>
+<p>
+Please note, for security reasons, the config file containing the GOOGLE_API_KEY has not been included in this repository. Therefore, to successfully run the app on a simulator, a new GOOGLE_API_KEY will be required.
+</P>
 
-For the frontend, please follow the steps below:
-1. Install NodeJS if it is not installed on the computer.
-2. Download Expo Go on your mobile device.
-3. Pull the frontend repository from https://github.com/yuguangdang/Holotype.git
-3. Open the terminal, on the Holotype root directory, type "npm install" to install all the dependencies.
-4. Type "npm start" to run the code and it will generate a QR code.
-5. Use your mobile device to scan the QR code to run the simulator on your phone.
-
-To connect backend, please follow the steps below:
-1. Pull the backend repository from https://github.com/yuguangdang/HOLOTYPE-BACKEND.git
-2. Type "npm install" and then "npm start" to run the backend locally.
-3. In the frontend, open BackendUrl.js file which is in the constants folder, and change the BAKCEND_URL to your IP address plus 8080 which is the default port (e.g. const BAKCEND_URL = "http://{private IP address}:8080").
-4. Restart the frontend.
