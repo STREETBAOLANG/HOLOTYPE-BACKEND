@@ -1,4 +1,4 @@
-<h3>Roject Overview</h3>
+<h3>Project Overview</h3>
 
 This is the backend code for Holotype, an React Native mobile application which allows users to log and post information (pictures, text and geolocation) about suspected new species. Users can also comment on and vote for posts. The highly voted posts will be sent to taxonomists to decide if it is indeed a new species.
 
